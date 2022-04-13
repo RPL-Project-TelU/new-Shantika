@@ -1,6 +1,6 @@
 List Pembagian tugas:
 Automata : Jahfal Mudrik Ramadhan
-table Driven Construction : Muhammad Sulthan Fahrein
+table Driven Construction : Muhammad Sulthan Fahrein / 1302200121
 Parameterization/generics :
 Defensive programming/design by contract : 
 Parsing :
