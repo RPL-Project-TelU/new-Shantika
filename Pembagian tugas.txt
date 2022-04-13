@@ -3,5 +3,5 @@ Automata :
 table Driven Construction : Muhammad Sulthan Fahrein
 Parameterization/generics :
 Defensive programming/design by contract : 
-Parsing : 
+Parsing :
 Runtime configuration : 
