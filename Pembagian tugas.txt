@@ -1,5 +1,5 @@
 List Pembagian tugas:
-Automata : 
+Automata : Jahfal Mudrik Ramadhan
 table Driven Construction : Muhammad Sulthan Fahrein
 Parameterization/generics :
 Defensive programming/design by contract : 
