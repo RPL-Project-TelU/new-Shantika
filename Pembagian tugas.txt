@@ -1,1 +1,7 @@
 List Pembagian tugas:
+Automata : 
+table Driven Construction : Muhammad Sulthan Fahrein
+Parameterization/generics :
+Defensive programming/design by contract : 
+Parsing : 
+Runtime configuration : 
