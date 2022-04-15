@@ -19,7 +19,7 @@ def login():
 
 root = Tk()
 root.title("Log In")
-root.geometry("300x200")
+root.geometry("300x150")
 global e1
 global e2
 
@@ -33,5 +33,5 @@ e2 = Entry(root)
 e2.place(x=140, y=40)
 e2.config(show="*")
 
-Button(root, text="Log In", command=login ,height = 3, width = 13).place(x=10, y=100)
+Button(root, text="Log In", command=login ,height = 2, width = 13).place(x=10, y=80)
 root.mainloop()
