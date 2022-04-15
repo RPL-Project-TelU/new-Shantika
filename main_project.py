@@ -2,6 +2,11 @@ from tkinter import *
 from tkinter import messagebox
 from tkcalendar import *
 
+def mainprogram():
+    
+    Button(root, text ="EXIT",font=("bold", 15),command=root.destroy).place(relx=0.5,rely=0.9,anchor=CENTER)
+    root.mainloop()
+
 def login():
     username = e1.get()
     password = e2.get()
