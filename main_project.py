@@ -17,7 +17,7 @@ def login():
     elif(username == "user" and password == "123"):
         messagebox.showinfo("","Login Berhasil")
         root.destroy()
-    #    mainprogram()
+        mainprogram()
 
     else :
         messagebox.showinfo("","Username dan Password Salah")
