@@ -2,6 +2,6 @@ List Pembagian tugas:
 Automata : Jahfal Mudrik Ramadhan
 table Driven Construction : Muhammad Sulthan Fahrein 
 Parameterization/generics : Muhammad Abdurrahman Firdaus
-Defensive programming/design by contract : Ahmad Rizky
+Defensive programming/design by contract : Achmad Rizky
 Parsing : Luthfan Rammdhan Wahyudi , Rizal Rafif
 Runtime configuration : Muhammad Farid Hafizh
