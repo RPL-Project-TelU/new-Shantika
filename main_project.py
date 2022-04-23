@@ -124,7 +124,7 @@ def mainprogram():
 
     btn.place(relx=0.1,rely=0.6,anchor=W)
 
-    def cbtn1():
+    def cbtn1(): 
         
         m = Tk()
         Label(m, text="SEARCH BUS", font=("arial bold red", 20),fg="Black").grid(column=1, row=0)
