@@ -119,7 +119,7 @@ def mainprogram():
         r.resizable(False,False)
         r.mainloop()
 
-
+#Implementasi UI dan Button pada aplikasi pemesanan tiket bus
     btn = Button(root, cursor="hand2", text="ADD BUS",fg="brown",font=("bold", 15), height=1, width=10, command=clibtn)
 
     btn.place(relx=0.1,rely=0.6,anchor=W)
