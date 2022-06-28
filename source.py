@@ -399,68 +399,46 @@ def activeTrigger(trigger:Trigger):
     currentState = nextState
 
 katasandi = []                          
-
+#halaman register akun
 print('-----------------------------------------')
-
 print('           Daftarkan Akun Anda                ')
-
 print('-----------------------------------------')
-
-daftar_email = input("Masukkan Email : ") 
-
-daftar_sandi = getpass.getpass('Masukkan Sandi : ')
-
- 
-
+#input email dan kata sandi
+daftar_email = input("Email : ") 
+daftar_sandi = getpass.getpass('Kata Sandi : ')
+#konfirmasi kata sandi
 def konfirmasi():
-
     konfirm = getpass.getpass('Konfirmasi Ulang : ')
-
     katasandi.append(konfirm)    
-
+    #kata sandi sesuai
     if konfirm == daftar_sandi:
-
         print("Kata Sandi Sesuai")
         print("Halaman",currentState)    
-
+    #kata sandi tidak sesuai
     else:
-
         print('Kata Sandi Tidak Sesuai')
-
         konfirmasi()       
-
 konfirmasi()
-
- 
-
+#halaman login
 print('-----------------------------------------')
-
 print('                  Login                  ')
-
 print('-----------------------------------------')
-
+#email
 def konfirmasi1():
-
-    email1 = input('Masukkan Email : ')
-
+    #input email
+    email1 = input('Email : ')
+    #email terdaftar
     if email1 == daftar_email:
-
         pass
-
+    #email tidak terdaftar
     else:
-
         print('Email Tidak Terdaftar')
-
         konfirmasi1()
-
-        
-
 konfirmasi1() 
-
-sandi = getpass.getpass('Masukkan Kata Sandi : ')
+#kata sandi
+sandi = getpass.getpass('Kata Sandi : ')
 
 if sandi == daftar_sandi:
-
     print('Login Berhasil')
     print("Program Pemasanan Tiket Bus Shantika")
     y =  input("Ketik (Pesan_Tiket) untuk pesan tiket bus: ")
@@ -469,7 +447,5 @@ if sandi == daftar_sandi:
     bookingbus()
     
 else:
-
     print('Kata Sandi Salah')
-
 print('------------------------------------------')
