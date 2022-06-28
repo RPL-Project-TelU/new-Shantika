@@ -1,6 +1,8 @@
 import csv
 import getpass
-
+from enum import Enum
+import os
+import time
  
 def bookingbus():
     def kota():
@@ -198,7 +200,7 @@ def bookingbus():
     3. Mandiri
     4. BCA
               ''')
-        metode = str(input("Tuliskan Nama Bank : "))
+        metode = str(input("Tuliskan Nama Bank (BNI, BRI, Mandiri, BCA): "))
         if metode == "BNI":
             print("Nama Bank", metode)
             print("Nomor Rekening Pembayaran")
@@ -227,14 +229,11 @@ def bookingbus():
         konfirmasi = str(input("Konfirmasi pembayaran = "))
         if (konfirmasi == "KONFIRMASI"):
             print("\n")
-            print("========== Bus Berhasil Di Booking ==========")           
-                  
-    ulang = True
-    inputuser = ""
-    import os
-    import time
+            print("========== Bus Berhasil Di Pesan ==========")           
 
-    while ulang == True:
+    ProgramUtama = True
+    inputuser = ""        
+    while ProgramUtama == True:
         print("\n==================================")
         print("       E - NEW SHANTHIKA          ")
         print("            Bandung          ")
@@ -347,17 +346,57 @@ def bookingbus():
         os.system("cls")
         bus_detail()
         print("")
-
-
-        inputuser = input("Ingin Melakukan Transaksi Lain? (ya/tidak) : ")
+        inputuser = input("Ingin Melakukan Transaksi Lagi (ya/tidak)? ")
         if inputuser != "ya":
-            ulang = False
+            ProgramUtama = False
             
     print("")
     print ("Terima Kasih")
     
-
     
+#automata
+#1302204034
+class TiketBusStatus(Enum):
+    LogIn = 0
+    Dashboard = 1
+    Tambahkan_Bus = 2
+    Cari_Bus = 3
+
+class Trigger(Enum):
+    Gagal_Login = 0
+    Pesan_Tiket = 1
+    Menambahkan_Tiket = 2
+    Mencari_Tiket = 3
+
+class transition():
+    prevState : TiketBusStatus
+    nextState : TiketBusStatus
+    trigger : Trigger
+
+    def __init__(self,prevState:TiketBusStatus, nextState:TiketBusStatus, trigger:Trigger):
+        self.prevState = prevState
+        self.nextState = nextState
+        self.trigger = trigger
+
+p : transition = [transition(TiketBusStatus.LogIn, TiketBusStatus.Dashboard, Trigger.Pesan_Tiket),
+                    transition(TiketBusStatus.LogIn, TiketBusStatus.Tambahkan_Bus, Trigger.Menambahkan_Tiket),
+                    transition(TiketBusStatus.LogIn, TiketBusStatus.Cari_Bus, Trigger.Mencari_Tiket),
+                    transition(TiketBusStatus.LogIn, TiketBusStatus.LogIn, Trigger.Gagal_Login),
+                ]
+
+currentState : TiketBusStatus = "LogIn"
+def getNextState(prevState:TiketBusStatus, trigger:Trigger):
+    nextState : TiketBusStatus = prevState
+    i = 0
+    for i in range(len(p)):
+        if p[i].prevState.name == prevState and p[i].trigger.name == trigger:
+            nextState = p[i].nextState
+    return nextState
+
+def activeTrigger(trigger:Trigger):
+    global currentState
+    nextState:TiketBusStatus = getNextState(currentState, Trigger[trigger].name)
+    currentState = nextState
 
 katasandi = []                          
 
@@ -381,11 +420,12 @@ def konfirmasi():
 
     if konfirm == daftar_sandi:
 
-        print('Sandi Cocok')    
+        print("Kata Sandi Sesuai")
+        print("Halaman",currentState)    
 
     else:
 
-        print('Sandi Tidak Sesuai')
+        print('Kata Sandi Tidak Sesuai')
 
         konfirmasi()       
 
@@ -417,19 +457,19 @@ def konfirmasi1():
 
 konfirmasi1() 
 
-sandi = getpass.getpass('Masukkan Sandi : ')
+sandi = getpass.getpass('Masukkan Kata Sandi : ')
 
 if sandi == daftar_sandi:
 
-    print('Anda Telah Login')
+    print('Login Berhasil')
+    print("Program Pemasanan Tiket Bus Shantika")
+    y =  input("Ketik (Pesan_Tiket) untuk pesan tiket bus: ")
+    activeTrigger(y)
+    print("Halaman",currentState.name)
     bookingbus()
     
-
 else:
 
-    print('Kata Sandi salah')
+    print('Kata Sandi Salah')
 
 print('------------------------------------------')
-
-
-
