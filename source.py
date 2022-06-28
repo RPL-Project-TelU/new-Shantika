@@ -188,29 +188,46 @@ def bookingbus():
         totalHarga()
         print("")
         pembayaran()
-        print("========== Bus Berhasil Di Booking ==========")
+        
 
     def pembayaran():
-        metode = int(input("Tuliskan Angka : "))
-        print('''Pilih Metode Pembayaran
-    1. Gopay
-    2. Dana
-    3. Ovo
-    4. ATM
+        
+        print('''Pilih Bank Yang Anda inginkan untuk pembayaran
+    1. BNI
+    2. BRI
+    3. Mandiri
+    4. BCA
               ''')
-        if metode == 1:
-            print('''
-    |--------------------|
-    |                    |
-    |                    |
-    |                    |
-    |        QR          |
-    |                    |
-    |                    |
-    |                    |
-    |--------------------|
-    ''')
-
+        metode = str(input("Tuliskan Nama Bank : "))
+        if metode == "BNI":
+            print("Nama Bank", metode)
+            print("Nomor Rekening Pembayaran")
+            print("\n")
+            print("123", nomor)
+        elif metode == "BRI":
+            print("Nama Bank", metode)
+            print("Nomor Rekening Pembayaran")
+            print("\n")
+            print("456", nomor)
+        elif metode == "Mandiri":
+            print("Nama Bank", metode)
+            print("Nomor Rekening Pembayaran")
+            print("\n")
+            print("789", nomor)
+        elif metode == "BCA":
+            print("Nama Bank", metode)
+            print("Nomor Rekening Pembayaran")
+            print("\n")
+            print("100", nomor)
+        else:
+            print("Bank Anda tidak terdaftar")
+        print("\n")    
+        print("Ketik 'KONFIRMASI', jika anda telah melakukan pembayaran")
+        
+        konfirmasi = str(input("Konfirmasi pembayaran = "))
+        if (konfirmasi == "KONFIRMASI"):
+            print("\n")
+            print("========== Bus Berhasil Di Booking ==========")           
                   
     ulang = True
     inputuser = ""
@@ -338,7 +355,7 @@ def bookingbus():
             
     print("")
     print ("Terima Kasih")
-    dashboard()
+    
 
     
 
