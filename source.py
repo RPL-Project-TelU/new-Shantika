@@ -17,15 +17,15 @@ def bookingbus():
     def tanggal():
         print("Tanggal Keberangkatan")
         
-        global tanggal
+        global tgl
         try:
-            tanggal = int(input("Tanggal (1-31)       : "))
-            while tanggal not in range (1,32):
+            tgl = int(input("Tanggal (1-31)       : "))
+            while tgl not in range (1,32):
                 print ("\nMohon Masukkan Tanggal")
-                tanggal = int(input("Tanggal (1-31)       : "))
+                tgl = int(input("Tanggal (1-31)       : "))
         except ValueError:
             print("Mohon Masukkan Tanggal")
-            tanggal = int(input("Tanggal (1-31)       : "))
+            tgl = int(input("Tanggal (1-31)       : "))
         
         global bulan    
         try:
@@ -174,7 +174,7 @@ def bookingbus():
         print("============  Tiket Booking Bus  ============")
         print("")
         print('Nama Bus         : ', bus[pilih]['NamaBus'])
-        print('Tanggal          : ', "{}/{}/{}". format(tanggal, bulan, tahun))
+        print('Tanggal          : ', "{}/{}/{}". format(tgl, bulan, tahun))
         print('Lokasi Asal      : ', dari)
         print('Waktu Berangkat  : ', bus[pilih]['Waktu'][0:5])
         print('Lokasi Tujuan    : ', ke)
