@@ -1,17 +1,14 @@
-FROM python:3.9-buster
+FROM python:3.6
 
-ENV PYTHONWRITEBYCODE = 1
-ENV PYTHONBUFFERED = 1
-ENV FLASK_APP=app.py
-ENV FLASK_ENV=development
-
-RUN python --version
-RUN pip --version
+RUN python3 --version
+RUN pip3 --version
 
 WORKDIR /app
 COPY ./app /app
 
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip3 install --no-cache-dir -r requirements.txt
 RUN apt-get install openssl
-EXPOSE 80
-CMD ["python -m http.server 8000"]
+
+EXPOSE 8080
+
+CMD ["gunicorn", "--bind", "0.0.0.0:8080", "app:app"]
