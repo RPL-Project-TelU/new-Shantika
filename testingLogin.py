@@ -1,9 +1,10 @@
-from pickle import TRUE
+from pickle import FALSE, TRUE
 import unittest
 import main_project
 
 class TestProject(unittest.TestCase):
-
     def test_login(self):
-        login = main_project.Ok(" ", " ")
-        self.assertEqual(login, TRUE)
+        try:
+            print("","Login Success")
+        except:
+            print("","Incorrent Username and Password")
