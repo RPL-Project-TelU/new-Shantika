@@ -1,8 +1,9 @@
 from tkinter import * 
 from tkinter import messagebox
 from PIL import ImageTk,Image
-from tkcalendar import * 
 import sqlite3
+from enum import Enum
+
 def mainprogram():
     #splash_screen
 
@@ -199,9 +200,52 @@ def mainprogram():
     Button(root, text ="EXIT",font=("bold", 15),command=root.destroy).place(relx=0.5,rely=0.9,anchor=CENTER)
     root.mainloop()
 
+#automata
+#1302204034
+class TiketBusStatus(Enum):
+    LogIn = 0
+    Dashboard = 1
+    Tambahkan_Bus = 2
+    Cari_Bus = 3
+
+class Trigger(Enum):
+    Gagal_Login = 0
+    Home = 1
+    Menambahkan_Tiket = 2
+    Mencari_Tiket = 3
+
+class transition():
+    prevState : TiketBusStatus
+    nextState : TiketBusStatus
+    trigger : Trigger
+
+    def __init__(self,prevState:TiketBusStatus, nextState:TiketBusStatus, trigger:Trigger):
+        self.prevState = prevState
+        self.nextState = nextState
+        self.trigger = trigger
+
+p : transition = [transition(TiketBusStatus.LogIn, TiketBusStatus.Dashboard, Trigger.Home),
+                    transition(TiketBusStatus.LogIn, TiketBusStatus.Tambahkan_Bus, Trigger.Menambahkan_Tiket),
+                    transition(TiketBusStatus.LogIn, TiketBusStatus.Cari_Bus, Trigger.Mencari_Tiket),
+                    transition(TiketBusStatus.LogIn, TiketBusStatus.LogIn, Trigger.Gagal_Login),
+                ]
+
+currentState : TiketBusStatus = "LogIn"
+def getNextState(prevState:TiketBusStatus, trigger:Trigger):
+    nextState : TiketBusStatus = prevState
+    i = 0
+    for i in range(len(p)):
+        if p[i].prevState.name == prevState and p[i].trigger.name == trigger:
+            nextState = p[i].nextState
+    return nextState
+
+def activeTrigger(trigger:Trigger):
+    global currentState
+    nextState:TiketBusStatus = getNextState(currentState, Trigger[trigger].name)
+    currentState = nextState
+
 
 #login Window
-
 def Ok():
     uname = e1.get()
     password = e2.get()
@@ -213,13 +257,17 @@ def Ok():
     elif(uname == "user" and password == "123"):
 
         messagebox.showinfo("","Login Success")
+        #automata
+        #1302204034
+        print("Program Booking Tiket Bus Shantika")
+        print("Halaman",currentState)
+        y =  input("Ketik 'Home' untuk ke halaman dashboard: ")
+        activeTrigger(y)
+        print("Halaman",currentState.name) 
         root.destroy()
         mainprogram()
-        
-
     else :
         messagebox.showinfo("","Incorrent Username and Password")
-
 
 root = Tk()
 root.title("Login")
