@@ -8,5 +8,5 @@
 except Exception as e:
     print("Modules are Missing:{}".format(e))
 
-api.add_resource(HealthController, '/awesome')
+api.add_resource(HealthController, '/health_check')
 docs.register(HealthController)
