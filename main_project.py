@@ -20,7 +20,7 @@ def login():
         mainprogram()
 
     else :
-        messagebox.showinfo("","Incorrent Username and Password")
+        messagebox.showinfo("","Incorrect Username and Password")
 
 root = Tk()
 root.title("Log In")
