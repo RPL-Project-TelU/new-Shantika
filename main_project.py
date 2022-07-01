@@ -12,15 +12,15 @@ def login():
     password = e2.get()
 
     if(username == "" and password == "") :
-        messagebox.showinfo("", "Tidak Boleh Kosong")
+        messagebox.showinfo("", "Blank Not allowed")
 
     elif(username == "user" and password == "123"):
-        messagebox.showinfo("","Login Berhasil")
+        messagebox.showinfo("","Login Success")
         root.destroy()
         mainprogram()
 
     else :
-        messagebox.showinfo("","Username dan Password Salah")
+        messagebox.showinfo("","Incorrent Username and Password")
 
 root = Tk()
 root.title("Log In")
