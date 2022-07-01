@@ -7,7 +7,7 @@ def mainprogram():
     #splash_screen
 
     root1=Tk()
-    root1.iconbitmap('pp.ico')
+    root1.iconbitmap('bus.ico')
     root1.geometry('2000x900')
     root1.configure(background='#454445')
     root1.title('Project Developer Details')
