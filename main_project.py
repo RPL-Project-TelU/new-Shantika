@@ -1,3 +1,4 @@
+from calendar import Calendar
 from tkinter import * 
 from tkinter import messagebox
 from PIL import ImageTk,Image
@@ -257,17 +258,13 @@ def Ok():
     elif(uname == "user" and password == "123"):
 
         messagebox.showinfo("","Login Success")
-        #automata
-        #1302204034
-        print("Program Booking Tiket Bus Shantika")
-        print("Halaman",currentState)
-        y =  input("Ketik 'Home' untuk ke halaman dashboard: ")
-        activeTrigger(y)
-        print("Halaman",currentState.name) 
         root.destroy()
         mainprogram()
+        
+
     else :
         messagebox.showinfo("","Incorrent Username and Password")
+
 
 root = Tk()
 root.title("Login")
