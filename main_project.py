@@ -13,11 +13,11 @@ def mainprogram():
     root1.configure(background='#454445')
     root1.title('Project Developer Details')
     Label(root1,text='Project Title: Bus Booking System',fg='#FFC300',font=('Arial 20 bold',50),background='#454445').grid(row=0,column=0)
-    Label(root1,text=' Advanced Programming ',fg='#15DAC1',font='Arial 20 bold',background='#454445').grid(row=1,column=0)
+    Label(root1,text=' Project kelompok New-Shantika ',fg='#15DAC1',font='Arial 20 bold',background='#454445').grid(row=1,column=0)
     Label(root1,text='',fg='red',font='Arial 20 bold',background='#454445').grid(row=2,column=0)
     Label(root1,text='-------------------------------------------------',fg='yellow',font='Arial 20 bold',background='#454445').grid(row=3,column=0)
     Label(root1,text='',fg='#15DAC1',font='Arial 20 bold',background='#454445').grid(row=4,column=0)
-    Label(root1,text='Double Click on the screen to enter the Project',fg='Green',font='Arial 20 bold',background='#454445').grid(row=5,column=0,pady=150)
+    Label(root1,text='Klik 2 kali untuk melanjutkan',fg='Green',font='Arial 20 bold',background='#454445').grid(row=5,column=0,pady=150)
 
     #bind function for splash screen
     def close(e):
