@@ -1,11 +1,12 @@
 # Project New Shantika
 ### Anggota
-### 1. Muhammad Abdurrahman Firdaus
-### 2. Achmad Rizky
-### 3. Jahfal Mudrik Ramadhan
-### 4. Luthfan Ramdhan Wahyudi
+### 1. Achmad Rizky
+### 2. Jahfal Mudrik Ramadhan
+### 3. Luthfan Ramdhan Wahyudi
+### 4. Muhammad Abdurrahman Firdaus
 ### 5. Muhammad Sulthan fahrein
 ### 6. Muhammad Farid Hafidz
+### 7. Rizal Rafif
 
 # Demo Project:
 
