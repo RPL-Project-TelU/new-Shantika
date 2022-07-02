@@ -1,10 +1,17 @@
+from tkinter import Label
 import unittest
 import main_project
 
-class TestProject(unittest.TestCase):
+class TestingStringMethods(unittest.TestCase):
 
-    def test_add(self):
-        self.assertEqual(" ", " ")
+    def test_label(self):
+        self.assertTrue(Label,'NAME')
 
-if __name__ == '__main__':
-    unittest.main()
+    def test_string_case(self):
+        self.assertEqual('address'.upper(), 'ADDRESS')
+
+    def test_is_string_upper(self):
+        self.assertTrue('NAME'.isupper())
+        self.assertFalse('Name'.isupper())
+        
+unittest.main()
