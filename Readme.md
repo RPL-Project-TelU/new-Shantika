@@ -16,7 +16,7 @@ Fitur Login
 
 Main Menu
 
-![](https://github.com/RPL-Project-TelU/new-Shantika/blob/main/Demo/main.PNG?raw=true)
+![](https://github.com/RPL-Project-TelU/new-Shantika/blob/main/Demo/mainfix.PNG?raw=true)
 
 Fitur Add Bus
 
