@@ -242,5 +242,3 @@ Button(root, text="Login", command=login ,height = 3, width = 13).place(x=10, y=
 
 root.mainloop()
 
-
-
