@@ -6,6 +6,7 @@
 ### 4. Luthfan Ramdhan Wahyudi
 ### 5. Muhammad Sulthan fahrein
 ### 6. Muhammad Farid Hafidz
+### 7. Rizal Rafif Setiawan
 
 # Demo Project:
 
