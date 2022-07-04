@@ -202,7 +202,7 @@ def mainprogram():
 
 #login Window
 
-def Ok():
+def login():
     uname = e1.get()
     password = e2.get()
 
@@ -238,7 +238,7 @@ e2.place(x=140, y=40)
 e2.config(show="*")
 
 
-Button(root, text="Login", command=Ok ,height = 3, width = 13).place(x=10, y=100)
+Button(root, text="Login", command=login ,height = 3, width = 13).place(x=10, y=100)
 
 root.mainloop()
 
