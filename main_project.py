@@ -202,7 +202,7 @@ def mainprogram():
 
 #login Window
 
-def login():
+class login():
     uname = e1.get()
     password = e2.get()
 
