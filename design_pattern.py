@@ -48,6 +48,22 @@ class cari_bus(bus_database):
         "Kota Tujuan": self.KotaTujuan, "Waktu Berangkat": self.WaktuBerangkat, 
         "Waktu Sampai": self.WaktuSampai, "Harga": self.Tarif, "Bangku": self.Bangku}
 
+class cari_bus2(bus_database):
+    def __init__(self):
+        self.Operator = "Shantika"
+        self.TipeBus = "Non AC"
+        self.KotaAsal = "Bekasi"
+        self.KotaTujuan = "Bandung"
+        self.WaktuBerangkat = 7
+        self.WaktuSampai = 9
+        self.Tarif = 100000
+        self.Bangku = 20
+    
+    def busdatabase(self):
+        return {"Operator": self.Operator, "Tipe Bus": self.TipeBus, "Kota Asal": self.KotaAsal, 
+        "Kota Tujuan": self.KotaTujuan, "Waktu Berangkat": self.WaktuBerangkat, 
+        "Waktu Sampai": self.WaktuSampai, "Harga": self.Tarif, "Bangku": self.Bangku}
+
 #The Factory Class
 class shantika():
     @staticmethod
@@ -66,7 +82,7 @@ class log_in:
     username = input("Username: ")
     password = input("Password: ")
     if username == "jahfal" and password == "123":
-        print("LogIn Berhasil")
+        print("Login Berhasil")
         if __name__ == "__main__":
             bus = shantika.getdatabase("tambah_bus")
             print(f"tambah_bus: {bus.busdatabase()}")
