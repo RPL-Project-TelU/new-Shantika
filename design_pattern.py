@@ -9,6 +9,7 @@ class bus_database(metaclass=ABCMeta):
     def busdatabase():
         #An abstract interface/product method
         "new Shantika"
+
 #Kelas konkret(nyata) cari_bus yang mengimplementasikan interface/product bus_database
 class tambah_bus(bus_database):
     def __init__(self):
@@ -30,7 +31,7 @@ class tambah_bus(bus_database):
         "Kota Tujuan": self.KotaTujuan, "Waktu Berangkat": self.WaktuBerangkat, 
         "Waktu Sampai": self.WaktuSampai, "Harga": self.Tarif, "Bangku": self.Bangku}
 
-#Kelas konkret(nyata) cari_bus yang mengimplementasikan interface/product shantika
+#Kelas konkret(nyata) cari_bus yang mengimplementasikan interface/product bus_database
 class cari_bus(bus_database):
     def __init__(self):
         self.Operator = "Shantika"
