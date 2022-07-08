@@ -1,15 +1,17 @@
 #Jahfal Mudrik Ramadhan 1302204034
 #factory method
-#the shantika interface
+
 from abc import ABCMeta, abstractmethod
-#The bus_database Interface
+#The bus_database interface/product
 class bus_database(metaclass=ABCMeta):
+    @staticmethod
     @abstractmethod
-    def bus_database():
-        #An abstract interface method
+    def busdatabase():
+        #An abstract interface/product method
         "new Shantika"
-#Kelas konkret(nyata) cari_bus yang mengimplementasikan interface shantika
-class tambah_bus():
+
+#Kelas konkret(nyata) cari_bus yang mengimplementasikan interface/product bus_database
+class tambah_bus(bus_database):
     def __init__(self):
         self.nama = "Jahfal"
         self.kontak = "0812"
@@ -29,8 +31,8 @@ class tambah_bus():
         "Kota Tujuan": self.KotaTujuan, "Waktu Berangkat": self.WaktuBerangkat, 
         "Waktu Sampai": self.WaktuSampai, "Harga": self.Tarif, "Bangku": self.Bangku}
 
-#Kelas konkret(nyata) cari_bus yang mengimplementasikan interface shantika
-class cari_bus():
+#Kelas konkret(nyata) cari_bus yang mengimplementasikan interface/product bus_database
+class cari_bus(bus_database):
     def __init__(self):
         self.Operator = "Shantika"
         self.TipeBus = "Non AC"
